@@ -1,38 +1,66 @@
-from cs50 import get_string
+#include <cs50.h>
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <ctype.h>
+#include <stdlib.h>
 
+int main(int argc, string argv[])
 
-def main():
+{
+    int k;
 
-    while True:
-        s = get_string("Text: ")
-        break
-    calc(s)
+    if (argc != 2)
+    {
+        printf("Usage: ./caesar key\n");
+        return 1;
+    }
 
+    for (int j = 0, m = strlen(argv[1]); j < m; j++)
+    {
 
-def calc(s):
+        if (isdigit(argv[1][j]))
+        {
+            k = atoi(argv[1]);
+        }
+        else
+        {
+            printf("Usage: ./caesar key\n");
+            return 1;
+        }
+    }
 
-    l = 0
-    w = 1
-    sen = 0
+    if (isdigit(*argv[1]))
+    {
 
-    for i in range(len(s)):
-        if s[i] >= 'a' and s[i] <= 'z' or s[i] >= 'A' and s[i] <= 'Z':
-            l += 1
-        elif s[i] == ' ':
-            w += 1
-        elif s[i] == '.' or s[i] == '?' or s[i] == '!':
-            sen += 1
+        string s = get_string("Plaintext: ");
 
-    a = 0.0588 * l / w * 100 - 0.296 * sen / w * 100 - 15.8
+        printf("ciphertext: ");
 
-    b = round(a)
+        for (int i = 0, n = strlen(s); i < n; i++)
+        {
+            if isupper(s[i])
+            {
+                printf("%c", (((s[i] + k) - 65) % 26) + 65);
+            }
 
-    if (b < 1):
-        print("Before Grade 1")
-    elif (b >= 16):
-        print("Grade 16+")
-    else:
-        print(f"Grade {b}")
+            else if islower(s[i])
+            {
+                printf("%c", (((s[i] + k) - 97) % 26) + 97);
+            }
 
+            else
+            {
+                printf("%c", s[i]);
+            }
+        }
 
-main()
+    }
+
+    else
+    {
+        printf("Usage: ./caesar key\n");
+        return 1;
+    }
+    printf("\n");
+}
