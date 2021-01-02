@@ -9,11 +9,11 @@ When the user inputs "./caesar key" each character in plaintext is replaced by a
 
 Examples:
 
-./caesar 1
+Input: ./caesar 1
 plaintext:  Hello
 
-ciphertext: Ifmmp
+Output: ciphertext: Ifmmp
 
-./caesar x
+Input: ./caesar x
 
-Usage: ./caesar key
+Output: Usage: ./caesar key
