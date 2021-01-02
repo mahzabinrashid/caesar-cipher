@@ -11,7 +11,9 @@ Examples:
 
 ./caesar 1
 plaintext:  Hello
+
 ciphertext: Ifmmp
 
 ./caesar x
+
 Usage: ./caesar key
